@@ -25,3 +25,5 @@ Today's result shows the best answer is given by ***pre-filtering of documents b
 ## BM25
 
 ## Reciprocal Rank Fusion (RRF)
+
+## Long-context re-ranking
