@@ -1,4 +1,4 @@
-# Datenanalyse_UN_RAG
+# Interact with Sportnews Articles
 ## Abstract
 This repository shows an approach to interact with scraped sportnews. The dataset includes about 60,000 articles. www.reviersport.de published the articles.
 
