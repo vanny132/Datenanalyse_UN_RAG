@@ -17,11 +17,28 @@ Today's result shows the best answer is given by ***pre-filtering of documents b
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/9da0f59c-4b31-4fec-8e5b-17b3f0631474)
 
 ## Ranking by Metadata
-
+The crawled articles contains an attribute `news_keywords`. This attribute is filled with keywords comma-separated. In the ranking by metadata, the process take the extracted entity-values from the query and calculate a score as follows:
+```math
+score = \frac{1}{quantity\ of\ keywords}
+```
+The more keywords are in the field `news_keywords`, the more irrelevant the individual extracted keyword will be. 
 ## Time-weighted ranking
-
+The weigthed ranking is based on the different between the extracted and parsed date from the query:
+```math
+difference\ [hours] = \frac{|query\ datetime - published\ datetime|}{3600}
+```
+Further the higher the `decay_rate` is, the more irrelevant are the articles that lie more in the past or in the future:
+```math
+score = (1 - decay_rate)^{difference\ [hours]}
+```
+A `decay_rate` of zero means, that the time has no impact on the ranking. The behaivor of the ranking of this case wasn't part of the development until now. 
 ## Similarity Search
-
+For similarity search the query and the articles are transform in embeddings vector. Further, the cosine similarity will calculate:
+```math
+score = cos(\theta) = \frac{A \cdot B}{||A|| \cdot ||B||}
+```
+where `A` and `B` represent the embeddings of the query and document.
+In the project `all-mpnet-base-v2`is used to generate the embeddings for both, the query and the articels. 
 ## BM25
 
 ## Reciprocal Rank Fusion (RRF)
