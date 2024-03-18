@@ -17,6 +17,7 @@ Today's result shows the best answer is given by ***pre-filtering of documents b
 <p align="center">
   <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/9da0f59c-4b31-4fec-8e5b-17b3f0631474", width="80%">
 </p>
+
 ## Extract entities with NER model
 - Extract
 - Dateparser
@@ -61,3 +62,5 @@ The long-context re-ranking is based on the paper [lost in middle](https://arxiv
   <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/c2c2cd86-5b8a-44ea-9fd4-6b44bd3a0891", width="40%">
 </p>
 This graph shows, that the fourth relevant document has to be on the last position. Based on the graph the long-context re-ranker was implemented in the project. 
+
+# Dataset
