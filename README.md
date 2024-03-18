@@ -16,6 +16,11 @@ Today's result shows the best answer is given by ***pre-filtering of documents b
 ## Inference Process
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/9da0f59c-4b31-4fec-8e5b-17b3f0631474)
 
+## Extract entities with NER model
+- Extract
+- Dateparser
+- Filter
+  
 ## Ranking by Metadata
 The crawled articles contains an attribute `news_keywords`. This attribute is filled with keywords comma-separated. In the ranking by metadata, the process take the extracted entity-values from the query and calculate a score as follows:
 ```math
