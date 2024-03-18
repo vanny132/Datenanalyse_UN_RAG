@@ -29,7 +29,7 @@ difference\ [hours] = \frac{|query\ datetime - published\ datetime|}{3600}
 ```
 Further the higher the `decay_rate` is, the more irrelevant are the articles that lie more in the past or in the future:
 ```math
-score = (1 - decay_rate)^{difference\ [hours]}
+score = (1 - decay\_rate)^{difference\ [hours]}
 ```
 A `decay_rate` of zero means, that the time has no impact on the ranking. The behaivor of the ranking of this case wasn't part of the development until now. 
 ## Similarity Search
