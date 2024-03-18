@@ -50,3 +50,8 @@ with $k = 60$. A higher $k$ relativizes the rank-distances. Further,  the spatia
 
 A solution is to normalize the scores of the ranking/retrieving mehtods between zero and one. Then, the scores can sum.
 ## Long-context re-ranking
+The long-context re-ranking is based on the paper [lost in middle](https://arxiv.org/abs/2307.03172). The paper shows well, that models are better at using relevant information that occurs at the very beginning or end of its input context, and performance degrades significantly when models must access and use information located in the middle of its input context. That means for the re-ranking, that retrieved documents have to be in a specific order as the following graph shows:
+<p align="center">
+  <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/c2c2cd86-5b8a-44ea-9fd4-6b44bd3a0891", width="40%">
+</p>
+This graph shows, that the fourth relevant document has to be on the last position. Based on the graph the long-context re-ranker was implemented in the project. 
