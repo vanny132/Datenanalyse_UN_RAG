@@ -14,8 +14,9 @@ Today's result shows the best answer is given by ***pre-filtering of documents b
 
 
 ## Inference Process
-![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/9da0f59c-4b31-4fec-8e5b-17b3f0631474)
-
+<p align="center">
+  <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/9da0f59c-4b31-4fec-8e5b-17b3f0631474", width="80%">
+</p>
 ## Extract entities with NER model
 - Extract
 - Dateparser
