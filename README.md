@@ -64,3 +64,13 @@ The long-context re-ranking is based on the paper [lost in middle](https://arxiv
 This graph shows, that the fourth relevant document has to be on the last position. Based on the graph the long-context re-ranker was implemented in the project. 
 
 # Dataset
+The dataset was crawled from www.reviersport.de and includes 59,938 articles. For each articles there are the following attributes crawled:
+- URL
+- Artilce's content
+- Teaser
+- Headline
+- Description: A short description about the article of the authors.
+- News-keywords: Keywords about the article selected by the authors.
+- Keywords: Keywords about the article selected by the authors.
+- Publishing date
+- Author
