@@ -53,8 +53,12 @@ In the project `all-mpnet-base-v2`is used to generate the embeddings for both, t
 The Best Match 25 (BM25) is a ranking function, which used in information retrieval. BM25 extends the principles of TF-IDF, while both compute the relevance of a document, but BM25 consider other factors like document length and the average length of documents in collection. BM25 calculates for each document $d$ in a collection of $D$ the score as follows:
 
 ```math
-\text{score}(D,Q) = \sum_{i=1}^{n} \text{IDF}(q_i) \cdot \frac{f(q_i, d) \cdot (k_1 + 1)}{f(q_i, d) + k_1 \cdot \left(1 - b + b \cdot \frac{l(d)}{\text{avg(l(D))}}\right)}
+\text{score}(d,q) = \sum_{i=1}^{n} \text{IDF}(q_i) \cdot \frac{f(q_i, d) \cdot (k_1 + 1)}{f(q_i, d) + k_1 \cdot \left(1 - b + b \cdot \frac{l(d)}{\text{avg(l(D))}}\right)}
 ```
+$IDF$ is the inverse term-frequency of $q_i$. A less term-frequency results in a higher score. Thereby, the score is more less for words with a high frequnency like *the*, *and*, *or* and so on.
+$f(q_i, d)$ is the term frequency of the term in the document $d$.
+The constants $k_1$ and $b$ are set to $k1=1.5$ and $b=0.75$.
+Further $l(d)$ is the length of the document and $avg(l(d))$ is the average length of all documents in the collection. Therefore, longer documents are more penalized than short documents.
 
 ## Reciprocal Rank Fusion (RRF)
 Reciprocal Rank Fusion is a simple method for combining several difference ranking methods in field of information retrieval. RRF simply sorts the documents according to the rank of each document in all retriever sets:
