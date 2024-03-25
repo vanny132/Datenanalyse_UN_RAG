@@ -86,20 +86,22 @@ First, RAGAS prompt the evaluation model to generate statements based on the que
 ```math
 F = \frac{Number\ of\ statements\ that\ were\ supported}{Total\ number\ of\ statements}
 ```
-<ins>Idea:</ins> The idea is, that the answer should be ground in the given context. This is important to avoid hallucinations and that the retrieved context can act as a justification for the generated answer.
+<ins>Idea:</ins> The idea is, that the answer should be ground in the given context. This is important to avoid hallucinations and that the retrieved context can act as a justification for the generated answer. The score is between $0$ and $1$ and higher score is better.
 
 ### Answer Relevance
 To compute the answer relevance the model generates questions for the given answer. Next, we calculate the cosine-similarity between the embeddings of each question $q_i$ and the original query:
 ```math
 AR = \frac{1}{n} \cdot \sum_{i=1}^{n}sim(q,q_i)
 ```
-<ins>Idea:</ins>Does the generated answer adress the actual question/query, that was provided? The more higher the score, the better the answer adresses to the question/query.
+<ins>Idea:</ins>Does the generated answer adress the actual question/query, that was provided? The more higher the score, the better the answer adresses to the question/query. The score is between $0$ and $1$ and higher score is better.
+
 ### Context Relevance
 The first step to calculate the context relevance is to split the provided context into sentences. Next, the evaluation model picks the relevant sentences and in last step the score will calculate as follows:
 ```math
 CR = \frac{Number\ of\ extracted\ sentences}{Total\ number\ of\ sentences\ in\ context}
 ```
-<ins>Idea:</ins> The retrieved context should be focused and containing as little irrelevant information as possible. This is important, if long context passages are retrieved to the LLM.
+<ins>Idea:</ins> The retrieved context should be focused and containing as little irrelevant information as possible. This is important, if long context passages are retrieved to the LLM. The score is between $0$ and $1$ and higher score is better.
+
 
 ### Limitations
 ## Langchain Criteria
