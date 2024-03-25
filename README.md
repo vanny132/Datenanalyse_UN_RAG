@@ -50,7 +50,9 @@ where `A` and `B` represent the embeddings of the query and document.
 In the project `all-mpnet-base-v2`is used to generate the embeddings for both, the query and the articels. Several studies shows, that removing stopwords can improve the similarity search. Therefore there is step to remove stopwords, if it's desired.
 
 ## BM25
-
+```math
+\text{score}(D,Q) = \sum_{i=1}^{n} \text{IDF}(q_i) \cdot \frac{f(q_i, D) \cdot (k_1 + 1)}{f(q_i, D) + k_1 \cdot \left(1 - b + b \cdot \frac{|D|}{\text{avgdl}}\right)}
+```
 ## Reciprocal Rank Fusion (RRF)
 Reciprocal Rank Fusion is a simple method for combining several difference ranking methods in field of information retrieval. RRF simply sorts the documents according to the rank of each document in all retriever sets:
 ```math
