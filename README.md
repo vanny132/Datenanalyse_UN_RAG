@@ -50,9 +50,12 @@ where `A` and `B` represent the embeddings of the query and document.
 In the project `all-mpnet-base-v2`is used to generate the embeddings for both, the query and the articels. Several studies shows, that removing stopwords can improve the similarity search. Therefore there is step to remove stopwords, if it's desired.
 
 ## BM25
+The Best Match 25 (BM25) is a ranking function, which used in information retrieval. BM25 extends the principles of TF-IDF, while both compute the relevance of a document, but BM25 consider other factors like document length and the average length of documents in collection. BM25 calculates for each document $d$ in a collection of $D$ the score as follows:
+
 ```math
-\text{score}(D,Q) = \sum_{i=1}^{n} \text{IDF}(q_i) \cdot \frac{f(q_i, D) \cdot (k_1 + 1)}{f(q_i, D) + k_1 \cdot \left(1 - b + b \cdot \frac{|D|}{\text{avgdl}}\right)}
+\text{score}(D,Q) = \sum_{i=1}^{n} \text{IDF}(q_i) \cdot \frac{f(q_i, d) \cdot (k_1 + 1)}{f(q_i, d) + k_1 \cdot \left(1 - b + b \cdot \frac{l(d)}{\text{avg(l(D))}}\right)}
 ```
+
 ## Reciprocal Rank Fusion (RRF)
 Reciprocal Rank Fusion is a simple method for combining several difference ranking methods in field of information retrieval. RRF simply sorts the documents according to the rank of each document in all retriever sets:
 ```math
