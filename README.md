@@ -47,7 +47,8 @@ For similarity search the query and the articles are transform in embeddings vec
 score = cos(\theta) = \frac{A \cdot B}{||A|| \cdot ||B||}
 ```
 where `A` and `B` represent the embeddings of the query and document.
-In the project `all-mpnet-base-v2`is used to generate the embeddings for both, the query and the articels. 
+In the project `all-mpnet-base-v2`is used to generate the embeddings for both, the query and the articels. Several studies shows, that removing stopwords can improve the similarity search. Therefore there is step to remove stopwords, if it's desired.
+
 ## BM25
 
 ## Reciprocal Rank Fusion (RRF)
