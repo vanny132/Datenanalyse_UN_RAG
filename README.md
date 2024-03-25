@@ -86,6 +86,7 @@ First, RAGAS prompt the evaluation model to generate statements based on the que
 ```math
 F = \frac{Number\ of\ statements\ that\ were\ supported}{Total\ number\ of\ statements}
 ```
+<ins>Idea:</ins> The idea is, that the answer should be ground in the given context. This is important to avoid hallucinations and that the retrieved context can act as a justification for the generated answer.
 
 ### Answer Relevance
 To compute the answer relevance the model generates questions for the given answer. Next, we calculate the cosine-similarity between the embeddings of each question $q_i$ and the original query:
