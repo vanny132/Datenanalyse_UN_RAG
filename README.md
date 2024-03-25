@@ -80,7 +80,24 @@ This graph shows, that the fourth relevant document has to be on the last positi
 After we passed different queries to the inference process, we evaluate the RAG pipeline by RAGAS and human. Additional we add *langchain criterea*. 
 
 ## RAGAS
+RAGAS is a framework for the following metrics. They are model-based metrics. You need query, answer and context to compute the metrics. The following based on the [RAGAS paper](https://arxiv.org/abs/2309.15217)
+### Faithfulness
+First, RAGAS prompt the evaluation model to generate statements based on the query. In a further prompt, the model verdicts, if statement is supoorted or not. The ratio is the faitfulness score 
+```math
+F = \frac{Number\ of\ statements\ that\ were\ supported}{Total\ number\ of\ statements}
+```
 
+### Answer Relevance
+To compute the answer relevance the model generates questions for the given answer. Next, we calculate the cosine-similarity between the embeddings of each question $q_i$ and the original query:
+```math
+AR = \frac{1}{n} \cdot \sum_{i=1}^{n}sim(q,q_i)
+```
+### Context Relevance
+The first step to calculate the context relevance is to split the provided context into sentences. Next, the evaluation model picks the relevant sentences and in last step the score will calculate as follows:
+```math
+CR = \frac{Number\ of\ extracted\ sentences}{Total\ number\ of\ sentences\ in\ context}
+```
+### Limitations
 ## Langchain Criteria
 
 ## Human evaluation
