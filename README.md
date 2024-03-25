@@ -93,11 +93,14 @@ To compute the answer relevance the model generates questions for the given answ
 ```math
 AR = \frac{1}{n} \cdot \sum_{i=1}^{n}sim(q,q_i)
 ```
+<ins>Idea:</ins>Does the generated answer adress the actual question/query, that was provided? The more higher the score, the better the answer adresses to the question/query.
 ### Context Relevance
 The first step to calculate the context relevance is to split the provided context into sentences. Next, the evaluation model picks the relevant sentences and in last step the score will calculate as follows:
 ```math
 CR = \frac{Number\ of\ extracted\ sentences}{Total\ number\ of\ sentences\ in\ context}
 ```
+<ins>Idea:</ins> The retrieved context should be focused and containing as little irrelevant information as possible. This is important, if long context passages are retrieved to the LLM.
+
 ### Limitations
 ## Langchain Criteria
 
