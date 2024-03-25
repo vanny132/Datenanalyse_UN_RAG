@@ -19,9 +19,11 @@ Today's result shows the best answer is given by ***pre-filtering of documents b
 </p>
 
 ## Extract entities with NER model
-- Extract
-- Dateparser
-- Filter
+The idea to extract entities is to filter the documents (articles) by entities. So it's possible to filter the documents by date, club, and season if the query contains them. This reduce the scope to a closed set of data. 
+
+There is a post process for date-entity to parse it to a `datetime` object. If the result of the parser isn't `None`, then the data will filter by the date with the condition `query_date <= published_date` with `published_date` as the released date of the document.
+
+For the entities `club` and `season` it's an `in` condition, because the `news_keywords` are comma-seperated keywords. They can split and we can search for the `club` and `season` values in the list of keywords.
   
 ## Ranking by Metadata
 The crawled articles contains an attribute `news_keywords`. This attribute is filled with keywords comma-separated. In the ranking by metadata, the process take the extracted entity-values from the query and calculate a score as follows:
