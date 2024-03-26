@@ -73,7 +73,7 @@ Further,  the spatial distance between the scores of the first and second rank d
 </p>
 That presents, that we loss some information in RRF. 
 
-A solution is to normalize the scores of the ranking/retrieving mehtods between zero and one. Then, the scores can sum.
+A solution is to normalize the scores of the ranking/retrieving methods between zero and one. Then, the scores can sum.
 ### Long-context re-ranking
 The long-context re-ranking is based on the paper [lost in middle](https://arxiv.org/abs/2307.03172). The paper shows well, that models are better at using relevant information that occurs at the very beginning or end of its input context, and performance degrades significantly when models must access and use information located in the middle of its input context. That means for the re-ranking, that retrieved documents have to be in a specific order as the following graph shows:
 <p align="center">
