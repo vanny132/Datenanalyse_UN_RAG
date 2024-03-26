@@ -109,6 +109,9 @@ CR = \frac{Number\ of\ extracted\ sentences}{Total\ number\ of\ sentences\ in\ c
 
 
 ### Limitations
+The project shows the limitations in the model-based approach, because RAGAS is very prone for wrong generations. If the model isn't complex enough the original [RAGAS library](https://github.com/explodinggradients/ragas) fails and the prompts and the extraction of information out of the prompt have to adapt. Further, less complex models oft vary in the model output and then the approach is very inrobust and unreliable.
+The paper experiments with GPT-3.5.
+
 ## Langchain Criteria
 
 ## Human evaluation
