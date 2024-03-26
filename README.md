@@ -66,7 +66,11 @@ Reciprocal Rank Fusion is a simple method for combining several difference ranki
 ```math
 score (d\in D) = \sum_{r \in R}{} \frac{1}{k+r(d)}
 ```
-with $k = 60$. A higher $k$ relativizes the rank-distances. Further,  the spatial distance between the scores of the first and second rank doesn't cosider by RRF. As instance, in the similarity search the first rank has a score of 0.9 and the second rank a score of 0.3. If we leave $k$ out of consideration and calculate the RRF-score for the first and second document, we see that the difference between $\frac{1}{1}= 1$ for the first rank and $\frac{1}{2} = 0.5$ for the second rank is smaller than the difference of the cosine similarity between the first and second rank. That shows, we loss some information in RRF. 
+with $k = 60$. A higher $k$ relativizes the rank-distances. 
+Further,  the spatial distance between the scores of the first and second rank doesn't cosider by RRF. As instance, in the similarity search the first rank has a score of 0.9 and the second rank a score of 0.3. If we leave $k$ out of consideration and calculate the RRF-score for the first and second document, we see that the difference between $\frac{1}{1}= 1$ for the first rank and $\frac{1}{2} = 0.5$ for the second rank is smaller than the difference of the cosine similarity between the first and second rank, as shown in the following graph:
+![Left: Score by method (like cosine-similarity) of datapoints - Rigth: The RRF-score for each datapoint/value](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/73e7e57b-6d6c-4dca-b356-42123bcd882d)
+
+That presents, that we loss some information in RRF. 
 
 A solution is to normalize the scores of the ranking/retrieving mehtods between zero and one. Then, the scores can sum.
 ### Long-context re-ranking
