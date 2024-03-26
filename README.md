@@ -69,7 +69,7 @@ score (d\in D) = \sum_{r \in R}{} \frac{1}{k+r(d)}
 with $k = 60$. A higher $k$ relativizes the rank-distances. 
 Further,  the spatial distance between the scores of the first and second rank doesn't cosider by RRF. As instance, in the similarity search the first rank has a score of 0.9 and the second rank a score of 0.3. If we leave $k$ out of consideration and calculate the RRF-score for the first and second document, we see that the difference between $\frac{1}{1}= 1$ for the first rank and $\frac{1}{2} = 0.5$ for the second rank is smaller than the difference of the cosine similarity between the first and second rank, as shown in the following graph:
 <p align="center">
-  <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/3c0218c3-49a7-49a6-b967-847c5d6023a2", width="80%" title = "Left: Score by method (like cosine-similarity) of datapoints - Rigth: The RRF-score for each datapoint/value">
+  <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/3ce21449-4252-4064-a7a8-2aa38874d55f", width="80%" title = "Left: Score by method (like cosine-similarity) of datapoints - Rigth: The RRF-score for each datapoint/value">
 </p>
 That presents, that we loss some information in RRF. 
 
