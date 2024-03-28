@@ -113,6 +113,16 @@ The project shows the limitations in the model-based approach, because RAGAS is 
 The paper experiments with GPT-3.5.
 
 ## Langchain Criteria
+Langchain provides an amount of different evaluation criterias, see [Criteria Evaluation](https://python.langchain.com/docs/guides/evaluation/string/criteria_eval_chain).
+
+Out of this basket of metrics, we use the following criterias:
+- Conciseness: Is the submission concise and on point?
+- Relevance: Is the submission reffering to a real quote from the text?
+- Correctness: Is the submission correct, accurate and factual?
+- Helpfulness: Is the submission helpful, insightful and appropriate?
+- Detail: Does the submission demonstrate attention to detail?
+
+
 
 ## Human evaluation
 
