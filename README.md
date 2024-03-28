@@ -132,7 +132,7 @@ Therefore we have to note, that is a subjectiv evaluation. In NLP common human-a
 The goal is to find the methods, which have the best inference result. 
 There are three setting points in the execution:
 - Retrieving methods (four options and nine combinations)
-- Chunk-size (size/overlap): (128/45), (256/85), (512/170)
+- Chunk-size (size/overlap): (128/42), (256/85), (508/170)
 - Generation model: [Llama-2-13b](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Sauerkraut Mixtral 8x7b](https://huggingface.co/VAGOsolutions/SauerkrautLM-Mixtral-8x7B-Instruct), [Sauerkraut SOLAR](https://huggingface.co/VAGOsolutions/SauerkrautLM-SOLAR-Instruct)
 All of them would combine and test and then evaluate by human and RAGAS.
 ## Execution
