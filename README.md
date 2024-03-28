@@ -122,10 +122,12 @@ Out of this basket of metrics, we use the following criterias:
 - Helpfulness: Is the submission helpful, insightful and appropriate?
 - Detail: Does the submission demonstrate attention to detail?
 
-
-
 ## Human evaluation
-
+The human evaluation process awarded points to each answer:
+- `5` Points for the right answers in the desired language.
+- `3` Points for the right answers in the wrong language or if we observe hallucation. Also, if the facts in answer is right, but there is a missing fact or if one of two expected facts is wrong.
+- `0`Points if the answer is wrong.
+- 
 # Experiments
 
 
