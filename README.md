@@ -127,8 +127,24 @@ The human evaluation process awarded points to each answer:
 - `5` Points for the right answers in the desired language.
 - `3` Points for the right answers in the wrong language or if we observe hallucation. Also, if the facts in answer is right, but there is a missing fact or if one of two expected facts is wrong.
 - `0`Points if the answer is wrong.
-  
+Therefore we have to note, that is a subjectiv evaluation. In NLP common human-annotaded datasets are annotaded by more than five different people.
 # Experiments
+The goal is to find the methods, which have the best inference result. 
+There are three setting points in the execution:
+- Retrieving methods (four options and nine combinations)
+- Chunk-size (size/overlap): (128/45), (256/85), (512/170)
+- Generation model: [Llama-2-13b](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf)[Sauerkraut Mixtral 8x7b](https://huggingface.co/VAGOsolutions/SauerkrautLM-Mixtral-8x7B-Instruct)[Sauerkraut SOLAR] (https://huggingface.co/VAGOsolutions/SauerkrautLM-SOLAR-Instruct)
+All of them would combine and test and then evaluate by human and RAGAS.
+## Execution
+
+## Results
+
+![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/08a27839-8ef3-447a-8550-6db7401ef56b)
+
+
+![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/a4eb7d05-b085-4bbc-b81f-cc173c044e04)
+
+![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/238b2bb6-0fa7-4ecd-8934-23600b7c1367)
 
 
 # Dataset
