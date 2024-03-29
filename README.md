@@ -124,7 +124,7 @@ Out of this basket of metrics, we use the following criterias:
 
 ## Human evaluation
 The human evaluation process awarded points to each answer:
-- `5` Points for the right answers in the desired language.
+- `5` Points for the right answers in the desired language or if the model answers with the expected behavior, if it isn't know the answer.
 - `3` Points for the right answers in the wrong language or if we observe hallucation. Also, if the facts in answer is right, but there is a missing fact or if one of two expected facts is wrong.
 - `0`Points if the answer is wrong.
 Therefore we have to note, that is a subjectiv evaluation. In NLP common human-annotaded datasets are annotaded by more than five different people.
@@ -135,14 +135,19 @@ There are three setting points in the execution:
 - Chunk-size (size/overlap): (128/42), (256/85), (508/170)
 - Generation model: [Llama-2-13b](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Sauerkraut Mixtral 8x7b](https://huggingface.co/VAGOsolutions/SauerkrautLM-Mixtral-8x7B-Instruct), [Sauerkraut SOLAR](https://huggingface.co/VAGOsolutions/SauerkrautLM-SOLAR-Instruct)
 All of them would combine and test and then evaluate by human and RAGAS. There are eleveen different questions/prompt in the test.
-## Execution
 
 ## Results
+The result shows different aspect. 
 
+In the following plot, there is the mean score of each retrieving methods scored by human. The plot shows, if no method is specified that closely matches the expected behaviour.
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/08a27839-8ef3-447a-8550-6db7401ef56b)
 
+The graphic shows that the metadata ranking method, when combined with other ranking methods, achieves the highest scores. This is explained by the fact, that the metadata ranking method works with the extracted entities from the query and the documents are filtered by the entities before. The filtering by entities achieves the best result in human evaluation as also shown in the following graphic _Comparison of Llama-2-13b and Sauerkraut Mixtral 8x7B by Retrieving Methods and Scores_. The best results that excepted metadata ranking is similarity and similarity combined with time-weigthed method. 
 
+The following barchart shows the amount of scores per retrieving combinations. 
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/a4eb7d05-b085-4bbc-b81f-cc173c044e04)
+
+The above two plots shows, that the bahavior of the approach isn't match with the expected bahavior of the prompter. However, this depends on the query as the follwing graphic shows.
 
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/238b2bb6-0fa7-4ecd-8934-23600b7c1367)
 
