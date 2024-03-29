@@ -143,9 +143,12 @@ The first thing you notice is the inference time of the models, shown in the fol
 </p>
 As a result, the SOLAR model is no longer taken into account in the following tests, because it isn't user friendly.
 
+\
 We investigated several aspects like the influence of different combined retrieving methods and chunk-sizes, also different queries. In the one hand the NER-model is able to extract the entities from the queries and can process them and on the other hand there are queries, that aren't able to handle by the NER-model. With this approach we wanted to determine if there is an impact of pre-filtering the data by specific entities/keywords. All of this is scored by human and RAGAS, but we use the RAGAS library, which has a lot development potential, because the model outputs aren't reliable. Based on this reason, we adapted the library to get valid results for _context_precision_ and _context_recall_. The RAGAS developer work on a better and more reliable solution actually.
 
+### Human Evaluation
 In the following plot, there is the mean score of each retrieving methods scored by human. The plot shows, if no method is specified that closely matches the expected behaviour.
+
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/08a27839-8ef3-447a-8550-6db7401ef56b)
 
 The graphic shows that the metadata ranking method, when combined with other ranking methods, achieves the highest scores. This is explained by the fact, that the metadata ranking method works with the extracted entities from the query and the documents are filtered by the entities before. The filtering by entities achieves the best result in human evaluation as also shown in the following graphic _Comparison of Llama-2-13b and Sauerkraut Mixtral 8x7B by Retrieving Methods and Scores_. The best results that excepted metadata ranking is similarity and similarity combined with time-weigthed method. 
