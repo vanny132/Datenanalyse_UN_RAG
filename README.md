@@ -137,7 +137,13 @@ There are three setting points in the execution:
 All of them would combine and test and then evaluate by human and RAGAS. There are eleveen different questions/prompt in the test.
 
 ## Results
-The result shows different aspect. 
+The first thing you notice is the inference time of the models, shown in the following: 
+<p align="center">
+  <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/8e34df1a-eeb9-4922-be42-3db684c0ec61", width="60%">
+</p>
+As a result, the SOLAR model is no longer taken into account in the following tests, because it isn't user friendly.
+
+We investigated several aspects like the influence of different combined retrieving methods and chunk-sizes, also different queries. In the one hand the NER-model is able to extract the entities from the queries and can process them and on the other hand there are queries, that aren't able to handle by the NER-model. With this approach we wanted to determine if there is an impact of pre-filtering the data by specific entities/keywords. All of this is scored by human and RAGAS, but we use the RAGAS library, which has a lot development potential, because the model outputs aren't reliable. Based on this reason, we adapted the library to get valid results for _context_precision_ and _context_recall_. The RAGAS developer work on a better and more reliable solution actually.
 
 In the following plot, there is the mean score of each retrieving methods scored by human. The plot shows, if no method is specified that closely matches the expected behaviour.
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/08a27839-8ef3-447a-8550-6db7401ef56b)
