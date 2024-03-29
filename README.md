@@ -160,6 +160,8 @@ The above two plots shows, that the bahavior of the approach isn't match with th
 
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/238b2bb6-0fa7-4ecd-8934-23600b7c1367)
 
+At last, the chunk-strategie has also an impact:
+![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/f603fb9e-ec36-4f14-a32f-ca7894d05e57)
 
 # Dataset
 The dataset was crawled from www.reviersport.de and includes 59,938 articles. For each articles there are the following attributes crawled:
