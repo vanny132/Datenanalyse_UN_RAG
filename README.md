@@ -132,7 +132,7 @@ Therefore we have to note, that is a subjectiv evaluation. In NLP common human-a
 The goal is to find the methods, which have the best inference result. 
 There are three setting points in the execution:
 - Retrieving methods (four options and sixteen combinations)
-- Chunk-size (size/overlap): (128/42), (256/85), (508/170)
+- Chunk-size (size/overlap) in tokens: (128/42), (256/85), (508/170)
 - Generation model: [Llama-2-13b](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Sauerkraut Mixtral 8x7b](https://huggingface.co/VAGOsolutions/SauerkrautLM-Mixtral-8x7B-Instruct), [Sauerkraut SOLAR](https://huggingface.co/VAGOsolutions/SauerkrautLM-SOLAR-Instruct)
 All of them would combine and test and then evaluate by human and RAGAS. There are eleveen different questions/prompt in the test.
 
@@ -141,7 +141,7 @@ The first thing you notice is the inference time of the models, shown in the fol
 <p align="center">
   <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/8e34df1a-eeb9-4922-be42-3db684c0ec61", width="60%">
 </p>
-As a result, the SOLAR model is no longer taken into account in the following tests, because it isn't user friendly,  because is inference time is too long.
+As a result, the SOLAR model is no longer taken into account in the following tests, because it isn't user friendly,  because is inference time of more than 67 seconds is too long.
 
 \
 We investigated several aspects like the influence of different combined retrieving methods and chunk-sizes, also different queries. In the one hand the NER-model is able to extract the entities from the queries and can process them and on the other hand there are queries, that aren't able to handle by the NER-model. With this approach we wanted to determine if there is an impact of pre-filtering the data by specific entities/keywords. All of this is scored by human and RAGAS, but we use the RAGAS library, which has a lot development potential, because the model outputs aren't reliable. Based on this reason, we adapted the library to get valid results for _context_precision_ and _context_recall_. The RAGAS developer work on a better and more reliable solution actually.
@@ -161,7 +161,7 @@ The plot shows the best result for the last three queries. That's because, that 
 
 At last, the chunk-strategie has also an impact:
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/f603fb9e-ec36-4f14-a32f-ca7894d05e57)
-The chunk-size ov 128 and an overlap of 42 has the highest density of right answers and match the expected bahaviour of the prompter than the other chunk-strategies. 
+The chunk-size of 128 and an overlap of 42 tokens has the highest density of right answers and match the expected bahaviour of the prompter than the other chunk-strategies. Compared to the other chunk-strategie it achieves 53% more right answers than the chunk-size of 256 and an overlap of 85 tokens and 33% more right answers than the chunk-size of 508 and an overlap of 170 tokens.
 
 As conclusion for the human evaluation we can note the following points:
 - Filtering the data by entities like club, season and the published date improves the RAG performace significant.
