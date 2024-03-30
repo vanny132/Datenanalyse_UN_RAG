@@ -157,7 +157,7 @@ The graphic also shows that the metadata ranking method combined with other rank
 The above two plots presents, that the bahavior of the approach isn't match with the expected bahavior of the prompter. However, this depends on the query as the follwing graphic shows.
 
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/db734835-0835-4ae6-b2ca-da1b845c14ad)
-
+The plot shows the best result for the last three queries. That's because, that the NER model can extract the right values for the entities to search with them through the `news_keywords` in the dataset. That results in the scores for the questions _Wie hat Leverkusen gegen Bremen in der Bundesliga-Hinrunde 2023 gespielt?_ and _Wie hat Bayer Leverkusen am 2023-11-25 der Bundesliga-Hinrunde 2023 gespielt?_, because in the first one are more right entity values that are in the `news_keywords`. To get a better understanding, please feel free to check the notebook _GLiNER/GLiNER_demo.ipynb_.
 
 At last, the chunk-strategie has also an impact:
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/f603fb9e-ec36-4f14-a32f-ca7894d05e57)
