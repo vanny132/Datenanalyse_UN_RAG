@@ -154,9 +154,6 @@ In the following plot, there is the mean score of each retrieving methods scored
 
 The graphic also shows that the metadata ranking method combined with other ranking methods, achieves the highest scores. This is explained by the fact, that the metadata ranking method works with the extracted entities from the query and the documents are filtered by the entities before. The filtering by entities achieves the best result in human evaluation as also shown in the following graphic _Comparison of Llama-2-13b and Sauerkraut Mixtral 8x7B by Retrieving Methods and Scores_. The best results that excepted metadata ranking is time-weighted retrieving and the combination of time-weighted and similarity search. 
 
-The following barchart shows the amount of scores per retrieving combinations. 
-![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/a4eb7d05-b085-4bbc-b81f-cc173c044e04)
-
 The above two plots presents, that the bahavior of the approach isn't match with the expected bahavior of the prompter. However, this depends on the query as the follwing graphic shows.
 
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/db734835-0835-4ae6-b2ca-da1b845c14ad)
