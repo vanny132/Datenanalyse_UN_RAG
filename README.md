@@ -127,7 +127,8 @@ The human evaluation process awarded points to each answer:
 - `5` Points for the right answers in the desired language or if the model answers with the expected behavior, if it isn't know the answer.
 - `3` Points for the right answers in the wrong language or if we observe hallucation. Also, if the facts in answer is right, but there is a missing fact or if one of two expected facts is wrong.
 - `0`Points if the answer is wrong.
-Therefore we have to note, that is a subjectiv evaluation. In NLP common human-annotaded datasets are annotaded by more than five different people.
+  
+We have to note, that is a subjectiv evaluation. In NLP common human-annotaded datasets are annotaded by more than five different people. To get a more reliable result, it has to be evaluate by other people, also.
 # Experiments
 The goal is to find the methods, which have the best inference result. 
 There are three setting points in the execution:
