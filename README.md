@@ -156,14 +156,14 @@ In the following plot, there is the mean score of each retrieving combinations s
 
 The graphic also shows that the metadata ranking method combined with other ranking methods, achieves the highest scores. This is explained by the fact, that the metadata ranking method works with the extracted entities from the query and the documents are filtered by the entities before. The filtering by entities achieves the best result in human evaluation as also shown in the following graphic _Comparison of Llama-2-13b and Sauerkraut Mixtral 8x7B by Retrieving Methods and Scores_. The best results that excepted metadata ranking is time-weighted retrieving and the combination of time-weighted and similarity search. 
 
-The above two plots presents, that the bahavior of the approach isn't match with the expected bahavior of the prompter. However, this depends on the query as the follwing graphic shows.
+The above plot presents, that the bahavior of the approach isn't match with the expected bahavior of the prompter. However, this depends on the query as the follwing graphic shows:
 
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/db734835-0835-4ae6-b2ca-da1b845c14ad)
-The plot shows the best result for the last three queries. That's because, that the NER model can extract the right values for the entities to search with them through the `news_keywords` in the dataset. That results in the scores for the questions _Wie hat Leverkusen gegen Bremen in der Bundesliga-Hinrunde 2023 gespielt?_ and _Wie hat Bayer Leverkusen am 2023-11-25 der Bundesliga-Hinrunde 2023 gespielt?_, because in the first one are more right entity values that are in the `news_keywords`. To get a better understanding, please feel free to check the notebook _GLiNER/GLiNER_demo.ipynb_.
+The plot shows the best result for the last three queries. That's because, that the NER model can extract the right values for the entities to search with them through the `news_keywords` in the dataset. That results in the good scores for the questions for the last three questions. To get a better understanding for the extraction process, please feel free to check the notebook _GLiNER/GLiNER_demo.ipynb_.
 
 At last, the chunk-strategie has also an impact:
 ![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/f603fb9e-ec36-4f14-a32f-ca7894d05e57)
-The chunk-size of 128 and an overlap of 42 tokens has the highest density of right answers and match the expected bahaviour of the prompter than the other chunk-strategies. Compared to the other chunk-strategie it achieves 53% more right answers than the chunk-size of 256 and an overlap of 85 tokens and 33% more right answers than the chunk-size of 508 and an overlap of 170 tokens.
+The chunk-size of 128 and an overlap of 42 tokens has the highest density of right answers and match better the expected bahaviour of the prompter than the other chunk-strategies. Compared to the other chunk-strategie it achieves 53% more right answers than the chunk-size of 256 and an overlap of 85 tokens and 33% more right answers than the chunk-size of 508 and an overlap of 170 tokens.
 
 As conclusion for the human evaluation we can note the following points:
 - Filtering the data by entities like club, season and the published date improves the RAG performace significant.
