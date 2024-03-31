@@ -148,14 +148,15 @@ We investigated several aspects like the influence of different combined retriev
 ### Human Evaluation
 In the following plot, there is the mean score of each retrieving combinations scored by human. The plot shows, that the combination of time-weigthed and metadata retrieving is the best combination.
 <figure>
-  <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/85728735-9860-4e2c-b550-4b2e30fabe14" alt="Mean score per retrieving combination">
+  <img src="https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/61e8b292-f55a-4b18-82a6-2ecde7ce2b9a" alt="Mean score per retrieving combination">
 </figure>
 
 The graphic also shows that the metadata ranking method combined with other ranking methods, achieves the highest scores. This is explained by the fact, that the metadata ranking method works with the extracted entities from the query and the documents are filtered by the entities before. The filtering by entities achieves the best result in human evaluation as also shown in the following graphic _Comparison of Llama-2-13b and Sauerkraut Mixtral 8x7B by Retrieving Methods and Scores_. The best results that excepted metadata ranking is time-weighted retrieving and the combination of time-weighted and similarity search. 
 
 The above plot presents, that the bahavior of the approach isn't match with the expected bahavior of the prompter. However, this depends on the query as the follwing graphic shows:
 
-![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/db734835-0835-4ae6-b2ca-da1b845c14ad)
+![image](https://github.com/vanny132/Datenanalyse_UN_RAG/assets/102876328/d34a0665-d21a-4fb8-97da-28d5797d59ce)
+
 The plot shows the best result for the last three queries. That's because, that the NER model can extract the right values for the entities to search with them through the `news_keywords` in the dataset. That results in the good scores for the questions for the last three questions. To get a better understanding for the extraction process, please feel free to check the notebook _GLiNER/GLiNER_demo.ipynb_.
 
 At last, the chunk-strategie has also an impact:
