@@ -104,20 +104,18 @@ CR = \frac{Number\ of\ extracted\ sentences}{Total\ number\ of\ sentences\ in\ c
 ```
 <ins>Idea:</ins> The retrieved context should be focused and containing as little irrelevant information as possible. This is important, if long context passages are retrieved to the LLM. The score is between $0$ and $1$ and higher score is better.
 
+#### Additional Metrics developed by RAGAS
+- Context Recall
+- Context Precision
+- Context Relevancy
+- Context Entity Recall
+- Answer Semantic Similarity
+- Answer Correctness
 
+In this project, context recall and context precision are used for evaluation, because they are concentrate on the quality of the retrieving process.
 ### Limitations
 The project shows the limitations in the model-based approach, because RAGAS is very prone for wrong generations. If the model isn't complex enough the original [RAGAS library](https://github.com/explodinggradients/ragas) fails and the prompts and the extraction of information out of the prompt have to adapt. Further, less complex models often vary in the model output and then the approach is very inrobust and unreliable.
 The paper experiments with GPT-3.5.
-
-## Langchain Criteria
-Langchain provides an amount of different evaluation criterias, see [Criteria Evaluation](https://python.langchain.com/docs/guides/evaluation/string/criteria_eval_chain).
-
-Out of this basket of metrics, we use the following criterias:
-- Conciseness: Is the submission concise and on point?
-- Relevance: Is the submission reffering to a real quote from the text?
-- Correctness: Is the submission correct, accurate and factual?
-- Helpfulness: Is the submission helpful, insightful and appropriate?
-- Detail: Does the submission demonstrate attention to detail?
 
 ## Human evaluation
 The human evaluation process awarded points to each answer:
